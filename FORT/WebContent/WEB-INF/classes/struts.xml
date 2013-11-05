@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+<constant name="struts.devMode" value="true" />
+   <package name="ft" extends="struts-default">
+
+		<action name="index">
+			<result>index.jsp</result>
+		</action>
+		<action name="">
+			<result>index.jsp</result>
+		</action>
+		<action name="login" class="ft.patient.PatientAction" method="execute">
+			<result name="success">menu.jsp</result>
+			<result name="input">index.jsp</result>
+		</action>
+		
+		<action name="appointments" class="ft.appointment.AppointmentAction" method="execute">
+			<result name="success">appointment.jsp</result>
+		</action>
+		
+<!-- 		<action name="chooseAppointment" class="ft.appointment.ChooseAppointmentAction" method="execute"> -->
+<!-- 			<result name="success">choose_appointment.jsp</result> -->
+<!-- 		</action> -->
+		
+		<action name="setAppointment" class="ft.appointment.SetAppointmentAction" method="execute">
+			<result name="success">set_appointment.jsp</result>
+		</action>
+		
+		<action name="messages" class="ft.message.MessageAction" method="execute">
+			<result name="success">message.jsp</result>
+		</action>
+		
+		<action name="uploads" class="ft.upload.UploadAction" method="execute">
+			<result name="success">upload.jsp</result>
+		</action>
+		
+		<action name="chooseAppointment" class="ft.calendar.Calendar" method="execute">
+			<result name="success">calendar.jsp</result>
+		</action>
+   </package>
+</struts>
